@@ -12,4 +12,8 @@ class Venda extends Model
     function cliente(){
     	return $this->belongsTo('App\Cliente', 'id_cliente', 'id');
     }
+
+    public function produtos() {
+        return $this->belongsToMany('App\Produto', 'produtos_venda', 'id_venda', 'id_produto');
+    }
 }
